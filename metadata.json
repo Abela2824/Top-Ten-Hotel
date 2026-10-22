@@ -1,0 +1,6 @@
+{
+  "name": "Top Ten Hotel - Addis Ababa",
+  "description": "Boutique luxury hotel in Yeka, Addis Ababa, Ethiopia featuring authentic Ethiopian hospitality, direct booking, and airport transfer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
