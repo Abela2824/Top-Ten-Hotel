@@ -269,12 +269,12 @@ export const BookPageContent: React.FC<BookPageContentProps> = ({
 
   // Page 3-5, 7-11: Menu Category Pages
   return (
-    <div className="h-full w-full flex flex-col justify-between p-5 sm:p-8 bg-[#161616] relative text-[#F2EEE7]">
+    <div className="h-full w-full flex flex-col justify-between p-4 sm:p-7 bg-[#161616] relative text-[#F2EEE7]">
       {/* Subtle page frame */}
-      <div className="absolute inset-2.5 sm:inset-3 border border-[#2C2C2C] pointer-events-none" />
+      <div className="absolute inset-2 sm:inset-3 border border-[#2C2C2C] pointer-events-none" />
 
       {/* Category Section Header */}
-      <div className="z-10 text-center pt-1 pb-3 border-b border-[#2C2C2C]">
+      <div className="z-10 text-center pt-0.5 pb-2.5 border-b border-[#2C2C2C]">
         <span className="text-[8px] sm:text-[9px] tracking-[0.35em] uppercase text-[#B59D77] font-sans font-medium">
           DAMERA RESTAURANT
         </span>
@@ -289,16 +289,16 @@ export const BookPageContent: React.FC<BookPageContentProps> = ({
       </div>
 
       {/* Menu Dish Items List */}
-      <div className="z-10 my-auto py-2 space-y-3.5 sm:space-y-4 overflow-y-auto max-h-[75vh] pr-1">
-        {page.items?.map((item, idx) => (
+      <div className="z-10 my-auto py-2 space-y-3 sm:space-y-3.5 overflow-y-auto max-h-[58vh] sm:max-h-[70vh] pr-1.5 touch-pan-y">
+        {page.items?.map((item) => (
           <div
             key={item.id}
             onClick={() => onSelectDish(item)}
-            className="group cursor-pointer pb-2.5 border-b border-[#252525] last:border-none hover:border-[#B59D77]/40 transition-colors"
+            className="group cursor-pointer pb-2 border-b border-[#252525] last:border-none hover:border-[#B59D77]/40 transition-colors active:opacity-80"
           >
             {/* Dish Name & Price Line */}
-            <div className="flex items-baseline justify-between gap-3">
-              <div className="flex items-center space-x-2">
+            <div className="flex items-baseline justify-between gap-2.5">
+              <div className="flex items-center space-x-1.5">
                 <span className="font-serif-luxury text-sm sm:text-base font-medium text-[#F2EEE7] group-hover:text-[#B59D77] transition-colors">
                   {lang === 'am' ? item.nameAm || item.name : item.name}
                 </span>
@@ -332,19 +332,19 @@ export const BookPageContent: React.FC<BookPageContentProps> = ({
         {/* Secondary Category Section if present (e.g. Desserts or Cold Beverages) */}
         {page.secondaryCategory && page.secondaryItems && page.secondaryItems.length > 0 && (
           <div className="pt-2">
-            <div className="text-center py-2 border-b border-[#2C2C2C] mb-3">
+            <div className="text-center py-1.5 border-b border-[#2C2C2C] mb-2.5">
               <h3 className="font-serif-luxury text-base sm:text-lg font-light text-[#F2EEE7] tracking-wider uppercase">
                 {lang === 'am' ? page.secondaryTitleAm : page.secondaryTitle}
               </h3>
             </div>
-            <div className="space-y-3">
+            <div className="space-y-2.5">
               {page.secondaryItems.map((item) => (
                 <div
                   key={item.id}
                   onClick={() => onSelectDish(item)}
-                  className="group cursor-pointer pb-2 border-b border-[#252525] last:border-none hover:border-[#B59D77]/40 transition-colors"
+                  className="group cursor-pointer pb-2 border-b border-[#252525] last:border-none hover:border-[#B59D77]/40 transition-colors active:opacity-80"
                 >
-                  <div className="flex items-baseline justify-between gap-3">
+                  <div className="flex items-baseline justify-between gap-2.5">
                     <span className="font-serif-luxury text-sm sm:text-base font-medium text-[#F2EEE7] group-hover:text-[#B59D77] transition-colors">
                       {lang === 'am' ? item.nameAm || item.name : item.name}
                     </span>
@@ -366,7 +366,7 @@ export const BookPageContent: React.FC<BookPageContentProps> = ({
       </div>
 
       {/* Footer Page Number */}
-      <div className="z-10 text-center pt-2 border-t border-[#252525]">
+      <div className="z-10 text-center pt-1.5 border-t border-[#252525]">
         <span className="text-[10px] font-mono text-stone-500 tracking-widest">
           PAGE {page.pageNumber} / 12
         </span>
