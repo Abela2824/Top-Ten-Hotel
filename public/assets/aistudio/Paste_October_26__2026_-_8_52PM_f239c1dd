@@ -1,0 +1,949 @@
+# TOP TEN HOTEL — PREMIUM INTERACTIVE DIGITAL MENU BOOK
+
+## PROJECT OBJECTIVE
+
+Continue building the existing **Top Ten Hotel, Addis Ababa** website.
+
+Create a complete, premium digital restaurant menu that looks and behaves like an elegant physical menu book, with realistic 3D page-turn animations.
+
+The menu must integrate naturally into the existing hotel website, particularly the Dining page.
+
+**Reference website:**  
+https://toptenhotel.com-addisababa.com/
+
+**Visual reference:** Use the approved Top Ten Hotel homepage design already present in this project. Preserve its near-black background, champagne-gold accents, elegant serif headings, clean sans-serif typography, spacious layouts, and restrained luxury aesthetic.
+
+This project should combine:
+
+- A premium printed restaurant menu aesthetic
+- Realistic interactive book-opening and page-turn animations
+- A mobile-friendly digital menu
+- A Dining page entry point
+- A working QR-code modal
+- Editable sample menu data
+
+Do not redesign the entire hotel website. Work specifically on the Dining page integration and the digital menu experience.
+
+The result should look like a genuine hospitality product created by a professional hotel design studio, not a generic restaurant application.
+
+---
+
+# 1. CRITICAL BRANDING RULES
+
+The menu must use the established Top Ten Hotel visual identity.
+
+**Do not use Best Western Premier Dynasty branding, colors, logos, venue names, or content.** Only the interaction concept of the premium digital book should carry over.
+
+## Top Ten Hotel color palette
+
+Use these colors consistently throughout the menu.
+
+- Primary background: `#161616`
+- Secondary background: `#1C1C1C`
+- Elevated surfaces: `#202020`
+- Primary text: `#F2EEE7`
+- Secondary text: `#B8B1A6`
+- Champagne-gold accent: `#B59D77`
+- Subtle borders: `#2C2C2C`
+- Dark outer presentation background: `#0A0A0A`
+
+The gold must be muted and sophisticated, never bright yellow or orange.
+
+Use gold selectively for fine rules, prices, active navigation, cover typography, page numbers, and understated details.
+
+Avoid colorful gradients, neon effects, excessive glassmorphism, and heavy drop shadows.
+
+## Typography
+
+Use the same typographic direction as the hotel homepage.
+
+Recommended pairing:
+
+- Headings: Cormorant Garamond or Playfair Display
+- Body: Inter, Manrope, or DM Sans
+
+Reuse the project's existing fonts if appropriate rather than loading unnecessary duplicate fonts.
+
+The overall feeling should be dark, warm, editorial, and timeless.
+
+---
+
+# 2. CORE EXPERIENCE: A REALISTIC DIGITAL BOOK
+
+The main feature is an interactive digital menu that feels like opening and reading a physical restaurant menu.
+
+Do not present the menu as a normal vertical webpage with a decorative flip animation added to it.
+
+The actual menu pages must turn.
+
+The visitor experience should be:
+
+1. The guest opens the menu from the Dining page or scans a QR code.
+2. A premium menu cover appears.
+3. The cover opens with a smooth 3D animation.
+4. The first menu spread is revealed.
+5. The guest turns pages by clicking, dragging, swiping, or using navigation controls.
+6. Menu sections appear on deliberately designed pages.
+7. The guest can continue browsing or jump directly to a category.
+
+The book interaction must be the centerpiece of this experience.
+
+Keep the interaction elegant and restrained.
+
+---
+
+# 3. BOOK COVER
+
+Create a proper menu cover that looks like a premium physical restaurant menu.
+
+Use:
+
+- Near-black charcoal background
+- Champagne-gold typography
+- Elegant serif lettering
+- Fine decorative rules
+- Very subtle paper or material texture, if appropriate
+- Deliberate spacing
+- Restrained shadows and edge detailing
+
+The cover should feel sophisticated when closed and when opening.
+
+Display the actual restaurant or dining venue name already established in the Top Ten Hotel project.
+
+If the current Dining page identifies Damera Restaurant, use:
+
+**DAMERA RESTAURANT**
+
+Supporting title:
+
+**FOOD & DRINKS**
+
+Brand signature:
+
+**TOP TEN HOTEL**
+
+**ADDIS ABABA · ETHIOPIA**
+
+Do not invent additional restaurant or bar names.
+
+If the existing project has verified names for other dining venues, preserve those names and make the book component reusable for their individual menus.
+
+The cover should not be overcrowded with information.
+
+---
+
+# 4. OPENING ANIMATION
+
+When the guest first enters the menu, show the closed cover rather than immediately displaying menu items.
+
+Create this opening sequence:
+
+- The book cover appears centered.
+- A subtle shadow establishes depth.
+- The cover rotates around its edge.
+- The first page or spread is revealed naturally.
+- The book becomes ready for interaction.
+
+Target an opening animation of approximately 700–1200 milliseconds.
+
+Keep it smooth, natural, and premium.
+
+Do not add long intro screens, unnecessary loading animations, sound effects, or excessive visual effects.
+
+The guest should reach the actual menu quickly.
+
+Respect reduced-motion preferences by providing a simpler opening transition when appropriate.
+
+---
+
+# 5. REALISTIC 3D PAGE-TURN EFFECT
+
+Implement a genuine page-turn effect using a suitable React-compatible page-flip library, such as `react-pageflip`, if compatible with the existing codebase. CSS 3D transforms are acceptable if they provide equivalent quality.
+
+Do not settle for a simple carousel, slideshow, horizontal slide transition, or page image that merely disappears and reappears.
+
+When a page turns, it should:
+
+- Rotate around its vertical edge
+- Use realistic perspective
+- Cast a soft moving shadow
+- Reveal the page underneath
+- Maintain consistent page dimensions
+- Show subtle depth and page thickness
+- Use natural acceleration and deceleration
+- Return to a stable position without bouncing
+
+The page itself must rotate.
+
+Do not rotate the entire book or screen.
+
+Avoid spinning, excessive zooming, flashing, and exaggerated cartoon-like page curls.
+
+The animation should feel like a premium physical menu being turned by hand.
+
+---
+
+# 6. DESKTOP BOOK LAYOUT
+
+On desktop and suitable tablet screens, display the open book as a two-page spread.
+
+Layout:
+
+**LEFT PAGE | CENTER SPINE | RIGHT PAGE**
+
+The pages must:
+
+- Have matching dimensions
+- Align precisely
+- Share a subtle central spine
+- Have consistent margins
+- Maintain readable typography
+- Keep page numbers aligned
+- Have subtle shadows around the outer edges
+
+The outer presentation area should use `#0A0A0A` or a closely related dark neutral.
+
+The book pages themselves should use the Top Ten palette, with `#161616` and `#1C1C1C` as the primary page surfaces.
+
+Do not introduce a bright-white page theme that conflicts with the hotel's approved dark design.
+
+Use very subtle surface variation so the pages remain visually distinct from the surrounding background.
+
+The page content must remain legible.
+
+---
+
+# 7. MOBILE BOOK LAYOUT
+
+Mobile is essential because guests will often access the menu through QR codes.
+
+Do not force a two-page spread onto a phone.
+
+On mobile, show **ONE PAGE AT A TIME**.
+
+The book must:
+
+- Fit the device viewport without horizontal overflow
+- Maintain readable font sizes
+- Support touch gestures
+- Allow natural page flipping
+- Keep the page controls reachable
+- Avoid excessively small menu items
+- Avoid loading unnecessarily large images
+
+Required interactions:
+
+- Swipe left: next page
+- Swipe right: previous page
+- Tap the right-side navigation area: next page
+- Tap the left-side navigation area: previous page
+- Use visible Previous and Next controls when appropriate
+
+Ensure gestures do not interfere with normal scrolling, clicking, or opening menu item details.
+
+Test the layout on common mobile widths, including 360px, 375px, 390px, and 430px.
+
+The mobile experience must still feel like reading an elegant book, not like viewing a shrunken desktop page.
+
+---
+
+# 8. PAGE NAVIGATION
+
+Include minimal navigation controls around the book.
+
+Desktop:
+
+`← Previous`     `Next →`
+
+Mobile:
+
+Small, accessible previous and next controls.
+
+Show the current position, for example:
+
+`PAGE 3 / 12`
+
+Calculate the total page count dynamically from the generated book pages.
+
+Navigation must remain visually subordinate to the menu.
+
+Do not cover food descriptions or prices with oversized controls.
+
+Support:
+
+- Clicking pages to turn them
+- Dragging or pulling a page corner if supported by the chosen library
+- Keyboard Left and Right arrow navigation
+- Visible Previous and Next controls
+- Touch swipes
+
+Disable navigation appropriately at the beginning and end of the book.
+
+---
+
+# 9. MENU PAGE DESIGN
+
+The menu pages should look deliberately designed, like a printed editorial restaurant menu.
+
+Use:
+
+- Elegant serif section headings
+- Clean dish names
+- Short descriptions
+- Clearly aligned prices
+- Thin champagne-gold rules
+- Generous spacing
+- Small, restrained dietary labels
+- Tasteful page numbers
+
+Avoid oversized rounded cards.
+
+Avoid displaying every dish inside its own boxed component.
+
+Prefer carefully composed typographic layouts that resemble premium printed menus.
+
+Use gold for selected details rather than entire blocks of text.
+
+The menu pages should feel like part of the book, not independent application screens.
+
+---
+
+# 10. DEMONSTRATION MENU CONTENT
+
+Populate the book with realistic sample dishes so the design can be evaluated immediately.
+
+**Important: all dishes and prices below are demonstration data, not verified Top Ten Hotel menu information.**
+
+Keep the sample content in an editable data file. Include a small, tasteful notice in the preview that says:
+
+`SAMPLE MENU · ITEMS AND PRICES ARE FOR DEMONSTRATION ONLY`
+
+This notice must be easy to disable when the hotel confirms its real menu.
+
+Do not invent claims that these are the hotel's actual offerings or current prices.
+
+Use the following sample categories and items.
+
+## BREAKFAST
+
+**Classic Ethiopian Breakfast**  
+Eggs, chechebsa, honey and fresh coffee.  
+320 ETB
+
+**Top Ten Breakfast**  
+Eggs, toast, potatoes and seasonal fruit.  
+450 ETB
+
+**Shiro Firfir**  
+Injera mixed with seasoned shiro sauce.  
+280 ETB
+
+**Fresh Fruit Platter**  
+A selection of seasonal fresh fruits.  
+220 ETB
+
+## STARTERS
+
+**Sambusa**  
+Crispy pastry with a seasoned filling.  
+220 ETB
+
+**Azifa**  
+Ethiopian lentil salad with lemon and fresh herbs.  
+190 ETB
+
+**Chicken Wings**  
+Chicken wings with house seasoning.  
+320 ETB
+
+## MAIN COURSE
+
+**Doro Wot**  
+Traditional Ethiopian chicken stew served with injera.  
+420 ETB
+
+**Tibs**  
+Sautéed beef with onions, peppers and herbs.  
+480 ETB
+
+**Grilled Chicken Breast**  
+Served with vegetables and roasted potatoes.  
+520 ETB
+
+**Beef Fillet**  
+Grilled beef with seasonal vegetables.  
+680 ETB
+
+## ETHIOPIAN SPECIALTIES
+
+**Vegetarian Combination**  
+A selection of Ethiopian vegetarian dishes.  
+420 ETB
+
+**Kitfo**  
+Seasoned minced beef with traditional accompaniments.  
+520 ETB
+
+**Special Tibs**  
+Tender beef sautéed with peppers, onions and herbs.  
+500 ETB
+
+## PIZZA & PASTA
+
+**Margherita Pizza**  
+Tomato, mozzarella and fresh basil.  
+380 ETB
+
+**Chicken Pizza**  
+Tomato, mozzarella, chicken and peppers.  
+460 ETB
+
+**Penne Arrabbiata**  
+Penne pasta with tomato, garlic and chili.  
+350 ETB
+
+## BURGERS & SANDWICHES
+
+**Classic Beef Burger**  
+Beef patty, lettuce, tomato and house sauce.  
+450 ETB
+
+**Chicken Burger**  
+Chicken, lettuce and house dressing.  
+420 ETB
+
+**Club Sandwich**  
+Chicken, egg, lettuce, tomato and fries.  
+440 ETB
+
+## SIDES
+
+**French Fries** — 150 ETB
+
+**Seasonal Vegetables** — 180 ETB
+
+**Roasted Potatoes** — 170 ETB
+
+**Fresh Garden Salad** — 180 ETB
+
+## DESSERTS
+
+**Chocolate Cake** — 220 ETB
+
+**Cheesecake** — 240 ETB
+
+**Fruit Salad** — 180 ETB
+
+**Ice Cream** — 180 ETB
+
+## COFFEE & TEA
+
+**Ethiopian Coffee** — 180 ETB
+
+**Macchiato** — 150 ETB
+
+**Cappuccino** — 180 ETB
+
+**Espresso** — 140 ETB
+
+**Ethiopian Tea** — 120 ETB
+
+## BEVERAGES
+
+**Fresh Orange Juice** — 200 ETB
+
+**Mango Juice** — 200 ETB
+
+**Still Water** — 80 ETB
+
+**Sparkling Water** — 120 ETB
+
+**Soft Drink** — 120 ETB
+
+Arrange the items across appropriately designed pages. Do not cram every category onto a single page.
+
+Use these sample items to populate the first version of the book. Keep the menu structure easy to update when the hotel provides its real dishes and prices.
+
+---
+
+# 11. MENU PAGE COMPOSITION
+
+Arrange the menu into a logical reading sequence.
+
+Suggested sequence:
+
+1. Cover
+2. Welcome / menu introduction
+3. Breakfast
+4. Starters
+5. Main courses
+6. Ethiopian specialties
+7. Pizza & pasta
+8. Burgers & sandwiches
+9. Sides
+10. Desserts
+11. Coffee & tea
+12. Beverages
+13. Closing / hotel signature
+
+Adjust the number of pages according to the actual layout and responsive book implementation.
+
+A two-page spread can contain complementary sections where the content fits comfortably.
+
+Do not add empty pages merely to reach a specific page count.
+
+Never shrink the text so far that the menu becomes difficult to read.
+
+Every page should feel balanced and intentional.
+
+---
+
+# 12. FOOD PHOTOGRAPHY
+
+Use food photography selectively and professionally.
+
+Prioritize a few strong images for:
+
+- The menu cover, if appropriate
+- The introductory spread
+- A featured dish
+- Selected category pages
+
+Do not put a large photograph beside every single dish.
+
+That would make the book heavy, repetitive, and difficult to browse.
+
+Use genuine hotel photography when available. Otherwise, use appropriate temporary food photography for the demonstration and keep image paths editable.
+
+Do not misrepresent generic food imagery as actual hotel photography.
+
+Images should:
+
+- Preserve their aspect ratio
+- Use sensible cropping
+- Load efficiently
+- Include appropriate alt text
+- Be lazy-loaded where practical
+- Avoid blocking the opening animation
+
+Use a small number of well-chosen images rather than a page full of competing photographs.
+
+---
+
+# 13. FEATURED DISH SPREAD
+
+Create one optional editorial feature spread.
+
+Example:
+
+**A TASTE OF ETHIOPIA**
+
+**Doro Wot**
+
+A short, one-line description.
+
+`420 ETB`
+
+Use one strong food image with restrained typography.
+
+This should resemble a beautifully designed printed menu spread.
+
+It must not become an oversized marketing banner.
+
+Keep the featured section data-driven and easy to disable when the actual menu is supplied.
+
+---
+
+# 14. OPTIONAL DISH DETAILS
+
+If a dish is clicked or tapped, allow a discreet detail overlay or modal.
+
+Show only:
+
+- Dish name
+- Short description
+- Price
+- Optional image
+- Optional dietary information
+
+Dietary indicators may include Vegetarian, Vegan, or Spicy only when appropriate for the sample data.
+
+The details interface must not interfere with the primary page-flip interaction.
+
+On mobile, use a simple and accessible bottom sheet if it improves usability.
+
+Do not add shopping-cart functionality, online ordering, checkout, or payment processing.
+
+This project is a browsing menu, not a food-delivery application.
+
+---
+
+# 15. CATEGORY INDEX
+
+The physical book interaction must remain the primary browsing experience.
+
+A discreet category index may allow users to jump directly to:
+
+- Breakfast
+- Starters
+- Main Course
+- Ethiopian Specialties
+- Pizza & Pasta
+- Burgers & Sandwiches
+- Sides
+- Desserts
+- Coffee & Tea
+- Beverages
+
+Use a compact index or subtle category navigation.
+
+Selecting a category should move the book to the appropriate page or spread.
+
+Do not replace the book with a large horizontal category-filter bar that makes the menu feel like a normal web application.
+
+Keep the category index visually consistent with the champagne-gold theme.
+
+---
+
+# 16. DINING PAGE INTEGRATION
+
+Integrate the book into the existing Top Ten Hotel Dining page.
+
+Do not add a separate Menu item to the main website navigation unless the existing project already requires one.
+
+Within the existing restaurant section, include two actions:
+
+**VIEW DIGITAL MENU ↗**
+
+**SCAN TO VIEW MENU**
+
+The first button should use a restrained champagne-gold fill with dark text.
+
+The second should use the dark background, a subtle champagne-gold border, and ivory text.
+
+Both buttons must be easy to recognize without dominating the Dining page.
+
+On mobile, stack the buttons cleanly if needed.
+
+The restaurant section should retain the existing website's spacing and editorial style.
+
+Do not redesign the rest of the Dining page as part of this task.
+
+## VIEW DIGITAL MENU
+
+Clicking this button must navigate to the actual interactive book route:
+
+`/menu`
+
+The page should open directly into the digital menu experience.
+
+Do not open a PDF, external booking page, or static image.
+
+## SCAN TO VIEW MENU
+
+Clicking this button must open a polished QR-code modal without leaving the Dining page.
+
+The modal should contain:
+
+**TOP TEN HOTEL**
+
+**SCAN TO VIEW OUR MENU**
+
+A functional QR code
+
+`Scan with your phone camera`
+
+A discreet close control
+
+Use a subtle background overlay and elegant animation.
+
+The modal must be keyboard accessible and should close through its close button or Escape key.
+
+Do not display a decorative QR code that does not work.
+
+---
+
+# 17. WORKING QR CODE
+
+Generate a real QR code that points to the digital menu.
+
+Use one configurable URL, for example:
+
+`MENU_URL`
+
+The final QR code should encode the full public URL ending in:
+
+`/menu`
+
+Do not leave a fake placeholder domain in the generated QR code.
+
+If the project already defines its production site URL, use that configuration. Otherwise, create one clearly documented configuration value and use the current deployment origin as a development fallback.
+
+Use a reliable QR-generation library compatible with the current project.
+
+The QR should have sufficient contrast and a clear quiet zone around its modules.
+
+Keep the QR itself simple and reliably scannable. Put the champagne-gold branding around it rather than compromising the QR pattern.
+
+The same destination must be used by:
+
+- The View Digital Menu button
+- The QR code
+- Any other link to this menu
+
+**One URL, one menu, one source of truth.**
+
+This means the hotel can update the menu content later without reprinting its QR codes, provided the URL stays the same.
+
+---
+
+# 18. MENU HEADER AND CLOSING PAGE
+
+Use a simplified menu header rather than copying the entire hotel navigation into the book.
+
+Display:
+
+**TOP TEN HOTEL**
+
+`ADDIS ABABA · ETHIOPIA`
+
+Provide a small:
+
+`← HOTEL WEBSITE`
+
+link leading to `/`.
+
+Keep the header restrained so it does not distract from the book.
+
+At the end of the menu, include a subtle closing page with:
+
+**TOP TEN HOTEL**
+
+`ADDIS ABABA · ETHIOPIA`
+
+A small link back to the hotel website.
+
+A **BOOK YOUR STAY** action using the existing verified Booking.com destination already configured in the hotel project.
+
+Do not invent a Booking.com URL.
+
+---
+
+# 19. TECHNICAL IMPLEMENTATION
+
+Work within the existing project architecture.
+
+Inspect the existing files before making changes.
+
+Preserve the site's current framework, routing, styling conventions, and dependencies wherever practical.
+
+If the project uses React and TypeScript, continue using them.
+
+Build reusable components such as:
+
+- `MenuBook`
+- `MenuCover`
+- `MenuPage`
+- `PageSpread`
+- `MenuNavigation`
+- `PageControls`
+- `DiningMenuActions`
+- `QRMenuModal`
+- `FeaturedDish`
+- `MenuItemDetails`
+
+Keep the book engine separate from the menu content.
+
+Store menu data in a clear file such as:
+
+`src/data/menuData.ts`
+
+Keep the destination URL in a central configuration file.
+
+Represent menu pages and category content as data, allowing the same book engine to be reused if the hotel later adds other verified dining venues.
+
+Do not duplicate the page-turn implementation for each venue.
+
+Do not overwrite unrelated homepage components or global styles.
+
+Do not introduce a backend, database, authentication, checkout, or online ordering system for this task.
+
+---
+
+# 20. PERFORMANCE
+
+Performance is particularly important for guests arriving from QR codes on mobile devices.
+
+Implement:
+
+- Efficient page rendering
+- Optimized image sizes
+- Lazy loading for non-visible images
+- Preloading of the next page when useful
+- Minimal dependencies
+- Responsive image dimensions
+- Efficient font loading
+- Smooth page animations
+- Sensible mobile resource usage
+
+Avoid loading every large image on every page immediately.
+
+The menu should open quickly and remain responsive during page turns.
+
+Do not sacrifice performance for unnecessary 3D effects.
+
+---
+
+# 21. ACCESSIBILITY
+
+Ensure the menu is usable beyond mouse interaction.
+
+Include:
+
+- Accessible Previous and Next buttons
+- Keyboard navigation
+- Visible focus states
+- Screen-reader labels
+- Escape-to-close modal behavior
+- Proper focus handling
+- Appropriate contrast
+- Reduced-motion support
+
+When reduced motion is preferred, simplify the page transition without making the menu unusable.
+
+The menu content must remain accessible even if the page-flip library fails or cannot render its 3D effect.
+
+---
+
+# 22. RESPONSIVENESS AND TESTING
+
+Test the book at these viewport widths:
+
+- 1440px
+- 1280px
+- 1024px
+- 768px
+- 430px
+- 390px
+- 375px
+- 360px
+
+Verify:
+
+- The cover is centered properly.
+- Desktop uses a two-page spread where space allows.
+- Mobile uses a single page at a time.
+- Text and prices remain readable.
+- No page overflows horizontally.
+- The first and final page behave correctly.
+- Category navigation jumps to the correct page.
+- Previous and Next controls work.
+- Keyboard controls work.
+- Touch gestures work without trapping the user.
+- The QR modal opens and closes correctly.
+- The generated QR code contains the correct menu URL.
+- View Digital Menu opens `/menu`.
+- The back-to-hotel link works.
+- The menu remains usable when animations are disabled.
+- No browser-console errors remain.
+
+Do not claim a test passed unless it has actually been performed.
+
+---
+
+# 23. DESIGN RESTRICTIONS
+
+Do not add:
+
+- Best Western burgundy or brand elements
+- Loud animations
+- Cartoon page turns
+- Full-screen spinning
+- Floating particles
+- Neon effects
+- Confetti
+- Autoplay audio
+- Excessive rounded cards
+- Generic food-delivery interface elements
+- Unnecessary search bars
+- Fake ordering buttons
+- Invented restaurant names
+- Fake hotel contact details
+- Fake guest reviews
+- Unverified claims about the real menu
+
+Do not change unrelated pages of the hotel website.
+
+Do not rebuild the homepage.
+
+Do not replace the menu with a flat PDF viewer or simple carousel.
+
+The page-turn animation must be the defining interaction.
+
+---
+
+# 24. FINAL QUALITY STANDARD
+
+Before completing the task, inspect both the Dining page and the digital book as one connected experience.
+
+Ask:
+
+- Does the menu look like part of Top Ten Hotel?
+- Are the charcoal and champagne-gold colors consistent?
+- Does the cover look premium?
+- Does the cover open convincingly?
+- Do pages turn around a believable axis?
+- Is there visible but restrained page depth?
+- Is the desktop spread balanced?
+- Is mobile comfortable to browse?
+- Are the dishes and prices easy to scan?
+- Is the book too crowded?
+- Does the QR code work?
+- Do both Dining page buttons work?
+- Is the demo content clearly identified as sample information?
+- Does the implementation preserve the rest of the hotel website?
+
+Fix actual problems rather than simply reporting them.
+
+If an element feels unnecessary, remove it.
+
+If an animation feels exaggerated, simplify it.
+
+If a page looks crowded, rearrange its contents.
+
+If a dependency creates compatibility problems, use the most reliable alternative that preserves the intended experience.
+
+## FINAL INSTRUCTION
+
+Implement the actual functioning feature in the existing project.
+
+Do not stop at a visual mockup or a written plan.
+
+Complete:
+
+1. The premium menu cover
+2. The realistic 3D book-opening animation
+3. The desktop two-page layout
+4. The mobile single-page layout
+5. Page flipping and navigation
+6. The editable sample menu content
+7. The Dining page's View Digital Menu button
+8. The Dining page's working QR-code modal
+9. The responsive layouts
+10. The integration with the existing hotel branding
+
+Do not redesign unrelated website sections.
+
+The final result should feel like **a beautifully crafted physical restaurant menu brought to life digitally**, designed specifically for Top Ten Hotel.
+
+**TOP TEN HOTEL DESIGN PRINCIPLES**
+
+ELEGANT. DARK. WARM. MINIMAL.
+
+LESS TEXT. MORE SPACE.
+
+REALISTIC PAGE TURNS.
+
+CHAMPAGNE GOLD, NOT FLASHY GOLD.
+
+A BOOK THAT FEELS LIKE A BOOK.

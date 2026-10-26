@@ -63,24 +63,10 @@ export const Footer: React.FC<FooterProps> = ({ lang, onNavigate }) => {
               </button>
               <button
                 type="button"
-                onClick={() => onNavigate('experience')}
-                className="text-left text-stone-300 hover:text-[#C5A880] transition-colors cursor-pointer"
-              >
-                {t.nav.experience}
-              </button>
-              <button
-                type="button"
                 onClick={() => onNavigate('gallery')}
                 className="text-left text-stone-300 hover:text-[#C5A880] transition-colors cursor-pointer"
               >
                 {t.nav.gallery}
-              </button>
-              <button
-                type="button"
-                onClick={() => onNavigate('location')}
-                className="text-left text-stone-300 hover:text-[#C5A880] transition-colors cursor-pointer"
-              >
-                {t.nav.location}
               </button>
               <button
                 type="button"

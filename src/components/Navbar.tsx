@@ -56,11 +56,16 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'home', label: t.nav.home },
     { id: 'rooms', label: t.nav.rooms },
     { id: 'dining', label: t.nav.dining },
-    { id: 'experience', label: t.nav.experience },
     { id: 'gallery', label: t.nav.gallery },
-    { id: 'location', label: t.nav.location },
     { id: 'contact', label: t.nav.contact },
   ];
+
+  const isItemActive = (id: PageRoute) => {
+    if (activeRoute === id) return true;
+    if (id === 'gallery' && activeRoute === 'experience') return true;
+    if (id === 'contact' && activeRoute === 'location') return true;
+    return false;
+  };
 
   const handleLinkClick = (route: PageRoute) => {
     setIsMobileMenuOpen(false);
@@ -98,7 +103,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center space-x-6 xl:space-x-7 text-[12px] tracking-[0.18em] uppercase text-stone-200 font-sans font-medium drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
             {navItems.map((item) => {
-              const isActive = activeRoute === item.id;
+              const isActive = isItemActive(item.id);
               return (
                 <button
                   key={item.id}
@@ -244,20 +249,23 @@ export const Navbar: React.FC<NavbarProps> = ({
         {isMobileMenuOpen && (
           <div className="lg:hidden bg-[#121212] border-t border-stone-800 px-6 py-6 space-y-4 animate-in fade-in slide-in-from-top-4 duration-200">
             <div className="flex flex-col space-y-3 text-xs tracking-[0.2em] uppercase text-stone-300">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  type="button"
-                  onClick={() => handleLinkClick(item.id)}
-                  className={`text-left py-2 border-b border-stone-900 flex justify-between items-center ${
-                    activeRoute === item.id ? 'text-[#C5A880] font-semibold' : 'hover:text-[#C5A880]'
-                  }`}
-                  id={`mobile-nav-${item.id}`}
-                >
-                  <span>{item.label}</span>
-                  {activeRoute === item.id && <span className="w-1.5 h-1.5 rounded-full bg-[#C5A880]" />}
-                </button>
-              ))}
+              {navItems.map((item) => {
+                const isActive = isItemActive(item.id);
+                return (
+                  <button
+                    key={item.id}
+                    type="button"
+                    onClick={() => handleLinkClick(item.id)}
+                    className={`text-left py-2 border-b border-stone-900 flex justify-between items-center ${
+                      isActive ? 'text-[#C5A880] font-semibold' : 'hover:text-[#C5A880]'
+                    }`}
+                    id={`mobile-nav-${item.id}`}
+                  >
+                    <span>{item.label}</span>
+                    {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#C5A880]" />}
+                  </button>
+                );
+              })}
             </div>
 
             <div className="pt-3 space-y-2">

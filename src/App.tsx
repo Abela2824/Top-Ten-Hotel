@@ -5,7 +5,6 @@ import { Hero } from './components/Hero';
 import { IntroSection } from './components/IntroSection';
 import { RoomShowcase } from './components/RoomShowcase';
 import { DiningSection } from './components/DiningSection';
-import { ExperienceSection } from './components/ExperienceSection';
 import { GallerySection } from './components/GallerySection';
 import { LocationSection } from './components/LocationSection';
 import { ReviewsSection } from './components/ReviewsSection';
@@ -34,11 +33,9 @@ export function App() {
       case 'dining':
         return 'dining';
       case 'experience':
-        return 'experience';
       case 'gallery':
         return 'gallery';
       case 'location':
-        return 'location';
       case 'contact':
         return 'contact';
       default:
@@ -124,10 +121,7 @@ export function App() {
               onNavigate={handleNavigate}
             />
 
-            {/* 6. Experience & Amenities */}
-            <ExperienceSection lang={lang} showAllInitially={false} />
-
-            {/* 7. Gallery */}
+            {/* 6. Gallery */}
             <GallerySection lang={lang} />
 
             {/* 8. Location */}
@@ -197,28 +191,8 @@ export function App() {
           </div>
         )}
 
-        {/* Dedicated Page View for Experience */}
-        {activeRoute === 'experience' && (
-          <div>
-            <div className="pt-24 sm:pt-28 pb-4 px-4 sm:px-8 bg-[#121212] border-b border-stone-800/60">
-              <div className="max-w-7xl mx-auto flex items-center justify-between">
-                <button
-                  type="button"
-                  onClick={() => handleNavigate('home')}
-                  className="inline-flex items-center space-x-2 text-xs tracking-[0.2em] uppercase text-[#C5A880] hover:text-stone-200 transition-colors cursor-pointer py-1.5"
-                >
-                  <ArrowLeft className="w-4 h-4" />
-                  <span>{lang === 'am' ? 'ወደ መነሻ ገጽ' : 'Back to Home'}</span>
-                </button>
-              </div>
-            </div>
-            <ExperienceSection lang={lang} showAllInitially={true} />
-            <BookingCTA lang={lang} />
-          </div>
-        )}
-
         {/* Dedicated Page View for Gallery */}
-        {activeRoute === 'gallery' && (
+        {(activeRoute === 'gallery' || activeRoute === 'experience') && (
           <div>
             <div className="pt-24 sm:pt-28 pb-4 px-4 sm:px-8 bg-[#121212] border-b border-stone-800/60">
               <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -230,6 +204,15 @@ export function App() {
                   <ArrowLeft className="w-4 h-4" />
                   <span>{lang === 'am' ? 'ወደ መነሻ ገጽ' : 'Back to Home'}</span>
                 </button>
+                <a
+                  href={HOTEL_INFO.bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#C5A880] hover:bg-[#B8976C] text-[#121212] font-semibold px-5 py-2 text-xs tracking-[0.15em] uppercase font-sans inline-flex items-center space-x-2 transition-colors cursor-pointer"
+                >
+                  <span>{t.nav.bookNow} (Booking.com)</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
               </div>
             </div>
             <GallerySection lang={lang} />
@@ -237,8 +220,8 @@ export function App() {
           </div>
         )}
 
-        {/* Dedicated Page View for Location */}
-        {activeRoute === 'location' && (
+        {/* Dedicated Page View for Contact (including Location & Map) */}
+        {(activeRoute === 'contact' || activeRoute === 'location') && (
           <div>
             <div className="pt-24 sm:pt-28 pb-4 px-4 sm:px-8 bg-[#121212] border-b border-stone-800/60">
               <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -250,29 +233,20 @@ export function App() {
                   <ArrowLeft className="w-4 h-4" />
                   <span>{lang === 'am' ? 'ወደ መነሻ ገጽ' : 'Back to Home'}</span>
                 </button>
+                <a
+                  href={HOTEL_INFO.bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#C5A880] hover:bg-[#B8976C] text-[#121212] font-semibold px-5 py-2 text-xs tracking-[0.15em] uppercase font-sans inline-flex items-center space-x-2 transition-colors cursor-pointer"
+                >
+                  <span>{t.nav.bookNow} (Booking.com)</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
               </div>
             </div>
             <LocationSection lang={lang} />
-            <BookingCTA lang={lang} />
-          </div>
-        )}
-
-        {/* Dedicated Page View for Contact */}
-        {activeRoute === 'contact' && (
-          <div>
-            <div className="pt-24 sm:pt-28 pb-4 px-4 sm:px-8 bg-[#121212] border-b border-stone-800/60">
-              <div className="max-w-7xl mx-auto flex items-center justify-between">
-                <button
-                  type="button"
-                  onClick={() => handleNavigate('home')}
-                  className="inline-flex items-center space-x-2 text-xs tracking-[0.2em] uppercase text-[#C5A880] hover:text-stone-200 transition-colors cursor-pointer py-1.5"
-                >
-                  <ArrowLeft className="w-4 h-4" />
-                  <span>{lang === 'am' ? 'ወደ መነሻ ገጽ' : 'Back to Home'}</span>
-                </button>
-              </div>
-            </div>
             <ContactSection lang={lang} />
+            <BookingCTA lang={lang} />
           </div>
         )}
       </main>
